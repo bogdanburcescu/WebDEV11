@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WWWIneArea</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" type="text/css" href="../firstPage/grid.css" />
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300i" rel="stylesheet">
+</head>
+
+<body onload="loading()">
+  <header >
+    <a href="../firstPage/firstPage.html">
+      <div class="col-lg-6 col-sm-8 col-xs-12" id="title">Welcome to WWWineArea</div>
+    </a>
+  </header>
+  <div id="navBar" class="">
+    <a href="../firstPage/firstPage.html">
+      <div class="heads">Home</div>
+    </a>
+    <a href="../cart/cart.html">
+      <div class="cartImage"></div>
+    </a>
+    <div id="nr-of-prod-in-cart"></div>
+    <a href="../cart/cart.html">
+      <div class="heads">Cosul meu</div>
+    </a>
+    <a href="../admin/admin.html" style="display:flex">
+      <div class="adminImage"></div>
+      <div class="heads">Admin</div>
+    </a>
+  </div>
+
+  <div id="content" class=" hidden">
+    <div id="list">
+      <div class="managing-products-container">
+        <div class="" style="
+    margin-top: 10px;">
+          Gestionare produse
+        </div>
+        <div>
+          <button onclick="showAddForm()" type="button" name="button">Adauga produs nou</button>
+        </div>
+      </div>
+      <div class="productsContainer">
+        <table border="1">
+          <thead>
+            <tr>
+              <td>Imagine</td>
+              <td style="width:50%">Nume</td>
+              <td>Pret</td>
+              <td>Stoc</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="edit" style="display:none;">
+      <div class="editing-products-container">
+        <div class="">
+          Editare produs: <span id="productName"></span>
+        </div>
+        <div>
+          <form onsubmit="event.preventDefault();saveChanges();">
+            <label>Imagine:<input type="text" name="image" /></label><br />
+            <label>Nume:<input type="text" name="name" /></label><br />
+            <label>Brand:<input type="text" name="brand" /></label><br />
+            <label>Mililitrii:<input type="text" name="milliliters" /></label><br />
+            <label>Descriere:<textarea name="description" /></textarea></label><br />
+            <label>Pret:<input type="text" name="price" /></label><br />
+            <label>Stoc:<input type="text" name="quantity" /></label><br />
+            <input type="submit" "Save" />
+            <input type="button" value="Cancel" onclick="showProductsTable();" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="addContainer" style="display:none;">
+      <div class="adding-products-container">
+        <div class="">
+          Adaugare produs
+        </div>
+        <div>
+          <form onsubmit="event.preventDefault();addProduct();">
+            <label>Imagine:<input type="text" name="image1" /></label><br />
+            <label>Nume:<input type="text" name="name1" /></label><br />
+            <label>Brand:<input type="text" name="brand1" /></label><br />
+            <label>Descriere:<input type="text" name="description1" /></label><br />
+            <label>Pret:<input type="text" name="price1" /></label><br />
+            <label>Stoc:<input type="text" name="quantity1" /></label><br />
+            <label>Mililitrii<input type="text" name="milliliters1" /></label><br />
+            <input type="submit" value="Save" />
+            <input type="button" value="Cancel" onclick="showProductsTable();" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>
